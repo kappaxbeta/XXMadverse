@@ -1,0 +1,52 @@
+.page {
+  height: 300vh;
+  font-family: sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  background-color: black;
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 100vw;
+    width: 200vw;
+    background: radial-gradient(rgb(255, 152, 162),rgba(255, 152, 162, 0) 70%);
+    transform: translateX(-50%) translateY(50vh);
+    opacity: .5;
+  }
+}
+
+.layout {
+  background-color: black;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  .main {
+    // if content is empty, footer will remains sticky to bottom
+    flex-grow: 1;
+  }
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  height: calc(100 * var(--svh, 1vh));
+  height: 100svh;
+  margin-bottom: mobile-vw(160px);
+  position: relative;
+}
+
+.header {
+  font-size: 10rem;
+  text-align: center;
+  color: #ff98a2;
+  @include mobile() {
+    font-size: 6rem;
+  }
+}
